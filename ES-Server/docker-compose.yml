@@ -8,5 +8,5 @@ services:
     ports:
       - "5093:5093"
     environment:
-      - PARAMS="172.22.0.38,admin,admin,ES-Compose"
+      - PARAMS="ip,username,password,name"
     hostname: Linux-ES
