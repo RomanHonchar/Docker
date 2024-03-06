@@ -27,7 +27,7 @@ RUN cd Python-3.9.9 && \
 
 #Copy and install Python2
 COPY Python-2.7.18/ /usr/src/Python-2.7.18/
-COPY exec/packages/VirtualEnvironment/requirements.txt /opt/ExecutionServer/packages/VirtualEnvironment/
+COPY exec_2023.3/packages/VirtualEnvironment/requirements.txt /opt/ExecutionServer/packages/VirtualEnvironment/
 
 RUN cd /usr/src/Python-2.7.18 && \
     ./configure --enable-optimizations && \
@@ -47,7 +47,7 @@ RUN /usr/local/bin/python -m pip install pip==19.2.3 -U && \
 RUN python3 -m pip install ansible && python3 -m pip install pywinrm
 
 #Copy ES files and set permissions to the Start script
-COPY exec/ /opt/ExecutionServer/
+COPY exec_2023.3/ /opt/ExecutionServer/
 RUN cd /opt/ExecutionServer && chmod 755 es_start.sh
 
 EXPOSE 5093
