@@ -44,7 +44,7 @@ RUN /usr/local/bin/python -m pip install pip==19.2.3 -U && \
     python3 -m pip install wheel==0.37.1 -U
 
 #Installing ansible
-RUN python3 -m pip install ansible && python3 -m pip install pywinrm && apt install sshpass
+RUN python3 -m pip install ansible && python3 -m pip install pywinrm && apt -y install sshpass
 
 #Copy ES files and set permissions to the Start script
 COPY exec/ /opt/ExecutionServer/
